@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image.png" />
+    <title>EISISEU MUSIC</title>
+    <meta content="eisiseu" property="og:title" />
+    <meta content="오늘의 Playlist, 데스크탑에 최적화되어 있습니다." property="og:description" />
+    <meta content="https://eisiseu.github.io/" property="og:url" />
+    <meta content="image.png" property="og:image" />
+    <meta content="#ff6a28" data-react-helmet="true" name="theme-color" />
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <img class="image" src="image.png" alt="이미지">
+        <h1 class="title">오늘의 Playlist</h1>
+        <button class="w-btn-neon2" id="next-btn" type="button">
+            Next
+        </button>
+    </div>
+
+    <div class="video-container" id="player-container">
+        <div id="player"></div>
+    </div>
+
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+
+    <!-- 비디오 리스트 -->
+    <script>
+        let videos = [
+            "rDFUl2mHIW4",
+            "i4SRH9jfUMQ",
+            "wyhwJnNpVJI",
+            "1giyGtBTw3Y",
+            "LDUpWBGu4-4"
+        ];
+    </script>
+
+    <div class="footer">
+        <div class="animation">
+            <span>🔥이 웹사이트는 PC에 최적화되어 있습니다.</span>
+            <br><br>
+            <span>&copy; 2024 eisiseu All rights reserved.</span>
+        </div>
+    </div>
+</body>
+
+</html>
