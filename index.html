@@ -13,12 +13,51 @@
     <meta content="#ff6a28" data-react-helmet="true" name="theme-color" />
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .playlist {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            padding: 20px;
+            background: linear-gradient(45deg, #e57f7f, #822F00, #30003C);
+            box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            height: 100vh;
+            width: 200px;
+            z-index: 1000;
+            transition: left 0.5s ease;
+        }
+
+        #youtube-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #youtube-list li {
+            cursor: pointer;
+            padding: 5px;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        #youtube-list li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #youtube-list li.selected {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
 </head>
 
 <body>
     <div class="content">
         <img class="image" src="image.png" alt="이미지">
         <h1 class="title">오늘의 Playlist</h1>
+        <button class="w-btn-neon2" id="prev-btn" type="button">
+            Previous
+        </button>
+
         <button class="w-btn-neon2" id="next-btn" type="button">
             Next
         </button>
@@ -28,14 +67,20 @@
         <div id="player"></div>
     </div>
 
+    <div class="playlist" id="playlist">
+        <h2>PlayList</h2>
+        <ul id="youtube-list">
+            <li data-index="0">Video 1</li>
+            <li data-index="1">Video 2</li>
+            <li data-index="2">Video 3</li>
+            <li data-index="3">Video 4</li>
+            <li data-index="4">Video 5</li>
+        </ul>
+    </div>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 
-    <!-- 비디오 리스트 -->
-    <!-- 아래 링크에서       이부분 뽑아가기                  -->
-    <!-- https://youtu.be/rDFUl2mHIW4?si=4yEjBJC4WcWrDhrv -->
-    
     <script>
         let videos = [
             "QgMFpuos4Rg",
@@ -44,12 +89,25 @@
             "Ii_w6jGjI7g",
             "r45OjRFjnts"
         ];
+
+        document.addEventListener('mousemove', function (event) {
+            handleMouseMove(event);
+        });
+
+        function handleMouseMove(event) {
+            const playlist = document.getElementById('playlist');
+            const mouseX = event.clientX;
+
+            if (mouseX < 200) {
+                playlist.style.left = '0';
+            } else {
+                playlist.style.left = '-200px';
+            }
+        }
     </script>
 
     <div class="footer">
         <div class="animation">
-            <span>🔥이 웹사이트는 PC에 최적화되어 있습니다.</span>
-            <br><br>
             <span>&copy; 2024 eisiseu All rights reserved.</span>
         </div>
     </div>
