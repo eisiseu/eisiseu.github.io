@@ -2,15 +2,11 @@ body {
     font-family: 'Pretendard', sans-serif;
     color: #ffffff;
     padding: 40px;
-    background: linear-gradient(45deg, #e57f7f, #822F00, #30003C);
+    background: linear-gradient(-45deg, #00bca1, #5dd6ae, #aeebb8);
     overflow: auto;
-    /* 스크롤 가능 */
     background-size: 100% 200%;
-    /* 배경 확대 */
     background-position: top center;
-    /* 배경 위치 중앙으로 설정 */
 }
-
 
 h1 {
     font-weight: 700;
@@ -65,15 +61,14 @@ button {
     min-width: 80px;
     min-height: 30px;
     background: linear-gradient(90deg,
-            rgb(230, 129, 129) 0%,
-            rgb(209, 79, 79) 100%);
+            rgb(176, 235, 184) 0%,
+            rgb(0, 199, 167) 100%);
     border-radius: 1000px;
     color: rgb(255, 255, 255);
     cursor: pointer;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
     font-weight: 700;
     font-family: 'Pretendard', sans-serif;
-    /* Pretendard 폰트 적용 */
     transition: 0.3s;
 }
 
@@ -86,7 +81,7 @@ button {
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    border: 6px solid #eb8f8f;
+    border: 6px solid #aeebb8;
     position: absolute;
     z-index: -1;
     top: 50%;
@@ -110,7 +105,6 @@ button {
 .image {
     width: auto;
     height: 34px;
-    /* 원하는 높이 값 설정 */
     object-fit: cover;
     margin-right: 10px;
 }
@@ -139,6 +133,40 @@ button {
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.playlist {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    padding: 20px;
+    background: linear-gradient(-45deg, #00bca1, #5dd6ae, #aeebb8);
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    height: 100vh;
+    width: 200px;
+    z-index: 1000;
+    transition: left 0.5s ease;
+}
+
+#youtube-list {
+    list-style: none;
+    padding: 0;
+}
+
+#youtube-list li {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+#youtube-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#youtube-list li.selected {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .footer {
