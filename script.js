@@ -42,6 +42,7 @@ function playNextVideo() {
     if (currentVideoIndex >= videos.length) {
         currentVideoIndex = 0;
     }
+    playVideoAtIndex(currentVideoIndex);
     player.loadVideoById(videos[currentVideoIndex]);
 }
 
@@ -51,6 +52,7 @@ function playPreviousVideo() {
         currentVideoIndex = videos.length - 1;
     }
     playVideoAtIndex(currentVideoIndex);
+    player.loadVideoById(videos[currentVideoIndex]);
 }
 
 function playVideoAtIndex(index) {
